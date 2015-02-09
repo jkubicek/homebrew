@@ -29,10 +29,11 @@ class Switters < Formula
     end
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", lib
     
-	prefix.install Dir["switterslib"]
-	prefix.install Dir["zxing"]
-	prefix.install Dir["zxing_java"]
+	lib.install Dir["switterslib"]
+	lib.install Dir["zxing"]
+	lib.install Dir["zxing_java"]
 	bin.install "switters"
 
     bin.install Dir["#{libexec}/bin/*"]
